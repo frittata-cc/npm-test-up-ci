@@ -1,20 +1,20 @@
 {
   "ref": "refs/heads/master",
-  "before": "76d9e5bce1dc0d84ab6999d9d7bfc202cf6ad52d",
-  "after": "9c762c15e93d8185c2a7f22d6c67bd35555aa68f",
+  "before": "2350b29a982907b610bdca4b5a3a36f4cb4c302d",
+  "after": "8153ca17ecb66207af43a6037d354825e11d0b41",
   "created": false,
   "deleted": false,
   "forced": false,
   "base_ref": null,
-  "compare": "https://github.com/frittata-cc/npm-test-up-ci/compare/76d9e5bce1dc...9c762c15e93d",
+  "compare": "https://github.com/frittata-cc/npm-test-up-ci/compare/2350b29a9829...8153ca17ecb6",
   "commits": [
     {
-      "id": "9c762c15e93d8185c2a7f22d6c67bd35555aa68f",
-      "tree_id": "c4bc4c0bb7ad879115b7b82eda546031c2075588",
+      "id": "e2165963e6b1b86b9cea56cc8635b5e34708d093",
+      "tree_id": "39b39eb3d2b5837c4e2dd96118cc89bd78235719",
       "distinct": true,
-      "message": "update fixtures",
-      "timestamp": "2017-11-12T23:39:16+01:00",
-      "url": "https://github.com/frittata-cc/npm-test-up-ci/commit/9c762c15e93d8185c2a7f22d6c67bd35555aa68f",
+      "message": "update , add ececa and listr",
+      "timestamp": "2017-11-13T00:32:05+01:00",
+      "url": "https://github.com/frittata-cc/npm-test-up-ci/commit/e2165963e6b1b86b9cea56cc8635b5e34708d093",
       "author": {
         "name": "Christian Fei",
         "email": "crifei93@gmail.com",
@@ -26,28 +26,52 @@
         "username": "christian-fei"
       },
       "added": [
-        "main.js",
-        "test/index.test.js"
+
       ],
       "removed": [
 
       ],
       "modified": [
-        ".env.sample",
-        "app.js",
+        "main.js",
         "package-lock.json",
-        "package.json",
-        "test/fixtures/webhook-payload.json"
+        "package.json"
+      ]
+    },
+    {
+      "id": "8153ca17ecb66207af43a6037d354825e11d0b41",
+      "tree_id": "ad4b97fcbd751219501b2ba1d04a0615e64b411f",
+      "distinct": true,
+      "message": "use listr",
+      "timestamp": "2017-11-13T00:38:56+01:00",
+      "url": "https://github.com/frittata-cc/npm-test-up-ci/commit/8153ca17ecb66207af43a6037d354825e11d0b41",
+      "author": {
+        "name": "Christian Fei",
+        "email": "crifei93@gmail.com",
+        "username": "christian-fei"
+      },
+      "committer": {
+        "name": "Christian Fei",
+        "email": "crifei93@gmail.com",
+        "username": "christian-fei"
+      },
+      "added": [
+
+      ],
+      "removed": [
+
+      ],
+      "modified": [
+        "main.js"
       ]
     }
   ],
   "head_commit": {
-    "id": "9c762c15e93d8185c2a7f22d6c67bd35555aa68f",
-    "tree_id": "c4bc4c0bb7ad879115b7b82eda546031c2075588",
+    "id": "8153ca17ecb66207af43a6037d354825e11d0b41",
+    "tree_id": "ad4b97fcbd751219501b2ba1d04a0615e64b411f",
     "distinct": true,
-    "message": "update fixtures",
-    "timestamp": "2017-11-12T23:39:16+01:00",
-    "url": "https://github.com/frittata-cc/npm-test-up-ci/commit/9c762c15e93d8185c2a7f22d6c67bd35555aa68f",
+    "message": "use listr",
+    "timestamp": "2017-11-13T00:38:56+01:00",
+    "url": "https://github.com/frittata-cc/npm-test-up-ci/commit/8153ca17ecb66207af43a6037d354825e11d0b41",
     "author": {
       "name": "Christian Fei",
       "email": "crifei93@gmail.com",
@@ -59,18 +83,13 @@
       "username": "christian-fei"
     },
     "added": [
-      "main.js",
-      "test/index.test.js"
+
     ],
     "removed": [
 
     ],
     "modified": [
-      ".env.sample",
-      "app.js",
-      "package-lock.json",
-      "package.json",
-      "test/fixtures/webhook-payload.json"
+      "main.js"
     ]
   },
   "repository": {
@@ -141,7 +160,7 @@
     "deployments_url": "https://api.github.com/repos/frittata-cc/npm-test-up-ci/deployments",
     "created_at": 1510270128,
     "updated_at": "2017-11-12T21:09:24Z",
-    "pushed_at": 1510526366,
+    "pushed_at": 1510529940,
     "git_url": "git://github.com/frittata-cc/npm-test-up-ci.git",
     "ssh_url": "git@github.com:frittata-cc/npm-test-up-ci.git",
     "clone_url": "https://github.com/frittata-cc/npm-test-up-ci.git",

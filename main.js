@@ -42,7 +42,7 @@ app.post('/', function (req, res) {
         return new Listr([
           {
             title: 'npm install',
-            task: () => execa.stdout('npm', ['install', url, process.env.NPM_TEST_UP_CI_GIT_DIR], {cwd: process.env.NPM_TEST_UP_CI_GIT_DIR}).then(result => {})
+            task: () => execa.stdout('npm', ['install'], {cwd: process.env.NPM_TEST_UP_CI_GIT_DIR}).then(result => {})
           },
           {
             title: 'npm t',
