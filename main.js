@@ -6,8 +6,6 @@ const app = express()
 app.use(bodyParser.json())
 
 app.post('/', function (req, res) {
-  // console.log('webhook payload', req.body)
-  console.log('req.body', req.body)
   const {
     head_commit: {
       id: commit
@@ -21,20 +19,26 @@ app.post('/', function (req, res) {
   let url = clone_url.replace('//github', `//${process.env.GITHUB_ACCESS_USERNAME}:${process.env.GITHUB_ACCESS_TOKEN}@github`)
   console.info('(url)', url)
 
-  spawnPgm('git ', ['clone', url], (err, result) => {
+  spawnPgm('git', ['clone', url, process.env.NPM_TEST_UP_CI_GIT_DIR], {}, (err, result) => {
     if (err) {
       console.error(err)
       throw err
     }
-    const {code, output} = result
-    console.log(code, output)
-    console.info('output', output)
-    res.send({})
+    // const {code, output} = result
+    // console.log(code, output)
+    // console.info('output', output)
+    // git reset --hard
+    spawnPgm('git', ['reset', '--hard', commit], {
+      cwd: process.env.NPM_TEST_UP_CI_GIT_DIR
+    }, (err, resul) => {
+      res.send({})
+      // spawnPgm('git', ['clone', url, process.env.NPM_TEST_UP_CI_GIT_DIR], (err, result) => {
+    })
   })
 })
 
-function spawnPgm (pgm, args, done) {
-  const run = spawn(pgm, args)
+function spawnPgm (pgm, args, opts, done) {
+  const run = spawn(pgm, args, opts)
   let output = ''
 
   run.stdout.on('data', data => { output += data })
@@ -42,9 +46,5 @@ function spawnPgm (pgm, args, done) {
   run.stderr.on('error', error => done(error))
   run.on('close', code => done(null, {code, output}))
 }
-
-// function run (task, args) {
-//   spawnPgm(task, args)
-// }
 
 module.exports = app
