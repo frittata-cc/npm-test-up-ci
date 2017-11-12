@@ -1,0 +1,23 @@
+{
+  "name": "npm-test-up-ci",
+  "version": "1.0.0",
+  "description": "deploy any up project with tests, triggered by webhooks",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frittata-cc/npm-test-up-ci.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frittata-cc/npm-test-up-ci/issues"
+  },
+  "homepage": "https://github.com/frittata-cc/npm-test-up-ci#readme",
+  "dependencies": {
+    "ava": "^0.23.0"
+  }
+}
