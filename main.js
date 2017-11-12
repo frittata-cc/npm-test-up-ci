@@ -24,16 +24,32 @@ app.post('/', function (req, res) {
       console.error(err)
       throw err
     }
-    // const {code, output} = result
-    // console.log(code, output)
-    // console.info('output', output)
-    // git reset --hard
     spawnPgm('git', ['reset', '--hard', commit], {
       cwd: process.env.NPM_TEST_UP_CI_GIT_DIR
-    }, (err, resul) => {
-      res.send({})
-      // spawnPgm('git', ['clone', url, process.env.NPM_TEST_UP_CI_GIT_DIR], (err, result) => {
+    }, (err, result) => {
+      if (err) {
+        console.error(err)
+        throw err
+      }
+      spawnPgm('npm', ['install'], {
+        cwd: process.env.NPM_TEST_UP_CI_GIT_DIR
+      }, (err, result) => {
+        if (err) {
+          console.error(err)
+          throw err
+        }
+        spawnPgm('npm', ['test'], {
+          cwd: process.env.NPM_TEST_UP_CI_GIT_DIR
+        }, (err, result) => {
+          if (err) {
+            console.error(err)
+            throw err
+          }
+          res.send({})
+        })
+      })
     })
+    // spawnPgm('git', ['clone', url, process.env.NPM_TEST_UP_CI_GIT_DIR], (err, result) => {
   })
 })
 
