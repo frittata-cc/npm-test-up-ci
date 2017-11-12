@@ -1,20 +1,20 @@
 {
   "ref": "refs/heads/master",
-  "before": "8153ca17ecb66207af43a6037d354825e11d0b41",
-  "after": "8695726d0a1dd60833ec9874abf5e59fd41d1538",
+  "before": "8695726d0a1dd60833ec9874abf5e59fd41d1538",
+  "after": "b2957a36b90fb877ce199dbaa46d5df9a1e2464c",
   "created": false,
   "deleted": false,
   "forced": false,
   "base_ref": null,
-  "compare": "https://github.com/frittata-cc/npm-test-up-ci/compare/8153ca17ecb6...8695726d0a1d",
+  "compare": "https://github.com/frittata-cc/npm-test-up-ci/compare/8695726d0a1d...b2957a36b90f",
   "commits": [
     {
-      "id": "8695726d0a1dd60833ec9874abf5e59fd41d1538",
-      "tree_id": "8d9e7a5353212ce799a3e1a5762680cc15f4a286",
+      "id": "b2957a36b90fb877ce199dbaa46d5df9a1e2464c",
+      "tree_id": "46e97ec9b595981049ee2999157fdf19d1cd12cb",
       "distinct": true,
-      "message": "kinda fix recursive test",
-      "timestamp": "2017-11-13T00:43:42+01:00",
-      "url": "https://github.com/frittata-cc/npm-test-up-ci/commit/8695726d0a1dd60833ec9874abf5e59fd41d1538",
+      "message": "get-port",
+      "timestamp": "2017-11-13T00:45:53+01:00",
+      "url": "https://github.com/frittata-cc/npm-test-up-ci/commit/b2957a36b90fb877ce199dbaa46d5df9a1e2464c",
       "author": {
         "name": "Christian Fei",
         "email": "crifei93@gmail.com",
@@ -32,18 +32,19 @@
 
       ],
       "modified": [
-        "main.js",
-        "test/fixtures/webhook-payload.json"
+        "package.json",
+        "test/fixtures/webhook-payload.json",
+        "test/index.test.js"
       ]
     }
   ],
   "head_commit": {
-    "id": "8695726d0a1dd60833ec9874abf5e59fd41d1538",
-    "tree_id": "8d9e7a5353212ce799a3e1a5762680cc15f4a286",
+    "id": "b2957a36b90fb877ce199dbaa46d5df9a1e2464c",
+    "tree_id": "46e97ec9b595981049ee2999157fdf19d1cd12cb",
     "distinct": true,
-    "message": "kinda fix recursive test",
-    "timestamp": "2017-11-13T00:43:42+01:00",
-    "url": "https://github.com/frittata-cc/npm-test-up-ci/commit/8695726d0a1dd60833ec9874abf5e59fd41d1538",
+    "message": "get-port",
+    "timestamp": "2017-11-13T00:45:53+01:00",
+    "url": "https://github.com/frittata-cc/npm-test-up-ci/commit/b2957a36b90fb877ce199dbaa46d5df9a1e2464c",
     "author": {
       "name": "Christian Fei",
       "email": "crifei93@gmail.com",
@@ -61,8 +62,9 @@
 
     ],
     "modified": [
-      "main.js",
-      "test/fixtures/webhook-payload.json"
+      "package.json",
+      "test/fixtures/webhook-payload.json",
+      "test/index.test.js"
     ]
   },
   "repository": {
@@ -133,7 +135,7 @@
     "deployments_url": "https://api.github.com/repos/frittata-cc/npm-test-up-ci/deployments",
     "created_at": 1510270128,
     "updated_at": "2017-11-12T21:09:24Z",
-    "pushed_at": 1510530235,
+    "pushed_at": 1510530397,
     "git_url": "git://github.com/frittata-cc/npm-test-up-ci.git",
     "ssh_url": "git@github.com:frittata-cc/npm-test-up-ci.git",
     "clone_url": "https://github.com/frittata-cc/npm-test-up-ci.git",

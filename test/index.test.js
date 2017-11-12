@@ -6,10 +6,10 @@ const exec = require('child_process').exec
 const {join} = require('path')
 const getPort = require('get-port')
 
-const PORT = getPort({port: 3001})
-
+let PORT
 let server
 test.before(async () => {
+  PORT = await getPort({port: 3001})
   server = await app.listen(PORT)
 })
 
