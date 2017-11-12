@@ -2,7 +2,7 @@
   "name": "npm-test-up-ci",
   "version": "1.0.0",
   "description": "deploy any up project with tests, triggered by webhooks",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "ava"
   },
