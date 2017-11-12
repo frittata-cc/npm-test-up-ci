@@ -1,5 +1,5 @@
 {
-  "name": "npt-test-up-ci",
+  "name": "npm-test-up-ci",
   "type": "server",
   "regions": ["eu-central-1"]
 }

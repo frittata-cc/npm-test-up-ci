@@ -7,7 +7,9 @@ app.use(bodyParser.json())
 const {PORT = 3000} = process.env
 
 app.post('/', function (req, res) {
-  console.log('webhook payload', req.body)
+  // console.log('webhook payload', req.body)
+  const {head_commit: {id: commit}} = req.body
+  console.log(`=> clone commit ${commit}`)
   // const args = req.query.args ? req.query.args.split(',') : [])
   spawnPgm('echo', ['hello'], (code, output) => {
     console.log('output', output)

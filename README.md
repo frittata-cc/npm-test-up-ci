@@ -5,6 +5,13 @@ this project should help to serve this purpose:
 - run the tests
 - deploy the up project
 
+## requirements
+
+- node
+- github account
+- github repo to build, test & deploy
+- github oauth tokens
+
 
 ## installation
 
