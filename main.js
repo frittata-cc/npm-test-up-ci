@@ -1,5 +1,6 @@
 require('dotenv').config()
-const {spawn} = require('child_process')
+const execa = require('execa')
+const Listr = require('listr')
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
@@ -19,48 +20,45 @@ app.post('/', function (req, res) {
   let url = clone_url.replace('//github', `//${process.env.GITHUB_ACCESS_USERNAME}:${process.env.GITHUB_ACCESS_TOKEN}@github`)
   console.info('(url)', url)
 
-  spawnPgm('git', ['clone', url, process.env.NPM_TEST_UP_CI_GIT_DIR], {}, (err, result) => {
-    if (err) {
-      console.error(err)
-      throw err
-    }
-    spawnPgm('git', ['reset', '--hard', commit], {
-      cwd: process.env.NPM_TEST_UP_CI_GIT_DIR
-    }, (err, result) => {
-      if (err) {
-        console.error(err)
-        throw err
-      }
-      spawnPgm('npm', ['install'], {
-        cwd: process.env.NPM_TEST_UP_CI_GIT_DIR
-      }, (err, result) => {
-        if (err) {
-          console.error(err)
-          throw err
-        }
-        spawnPgm('npm', ['test'], {
-          cwd: process.env.NPM_TEST_UP_CI_GIT_DIR
-        }, (err, result) => {
-          if (err) {
-            console.error(err)
-            throw err
+  const tasks = new Listr([
+    {
+      title: 'git',
+      task: () => {
+        return new Listr([
+          {
+            title: 'Cloning repo',
+            task: () => execa.stdout('git', ['clone', url, process.env.NPM_TEST_UP_CI_GIT_DIR]).then(result => {})
+          },
+          {
+            title: 'Checking out commit',
+            task: () => execa.stdout('git', ['reset', '--hard', commit], {cwd: process.env.NPM_TEST_UP_CI_GIT_DIR}).then(result => {})
           }
-          res.send({})
-        })
-      })
-    })
-    // spawnPgm('git', ['clone', url, process.env.NPM_TEST_UP_CI_GIT_DIR], (err, result) => {
+        ], {concurrent: false})
+      }
+    },
+    {
+      title: 'npm',
+      task: () => {
+        return new Listr([
+          {
+            title: 'npm install',
+            task: () => execa.stdout('npm', ['install', url, process.env.NPM_TEST_UP_CI_GIT_DIR], {cwd: process.env.NPM_TEST_UP_CI_GIT_DIR}).then(result => {})
+          },
+          {
+            title: 'npm t',
+            task: () => execa.stdout('npm', ['t'], {cwd: process.env.NPM_TEST_UP_CI_GIT_DIR}).then(result => {})
+          }
+        ], {concurrent: false})
+      }
+    }
+  ])
+
+  tasks.run()
+  .then(() => {
+    res.send({})
+  }).catch(err => {
+    console.error(err)
   })
 })
-
-function spawnPgm (pgm, args, opts, done) {
-  const run = spawn(pgm, args, opts)
-  let output = ''
-
-  run.stdout.on('data', data => { output += data })
-  run.stderr.on('data', data => { output += data })
-  run.stderr.on('error', error => done(error))
-  run.on('close', code => done(null, {code, output}))
-}
 
 module.exports = app
