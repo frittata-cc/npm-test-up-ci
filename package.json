@@ -19,6 +19,7 @@
   "homepage": "https://github.com/frittata-cc/npm-test-up-ci#readme",
   "dependencies": {
     "ava": "^0.23.0",
+    "body-parser": "^1.18.2",
     "express": "^4.16.2"
   }
 }
