@@ -4,8 +4,9 @@ const request = require('r2')
 const {readFileSync} = require('fs')
 const exec = require('child_process').exec
 const {join} = require('path')
+const getPort = require('get-port')
 
-const PORT = 3001
+const PORT = getPort({port: 3001})
 
 let server
 test.before(async () => {

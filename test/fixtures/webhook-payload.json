@@ -1,20 +1,20 @@
 {
   "ref": "refs/heads/master",
-  "before": "2350b29a982907b610bdca4b5a3a36f4cb4c302d",
-  "after": "8153ca17ecb66207af43a6037d354825e11d0b41",
+  "before": "8153ca17ecb66207af43a6037d354825e11d0b41",
+  "after": "8695726d0a1dd60833ec9874abf5e59fd41d1538",
   "created": false,
   "deleted": false,
   "forced": false,
   "base_ref": null,
-  "compare": "https://github.com/frittata-cc/npm-test-up-ci/compare/2350b29a9829...8153ca17ecb6",
+  "compare": "https://github.com/frittata-cc/npm-test-up-ci/compare/8153ca17ecb6...8695726d0a1d",
   "commits": [
     {
-      "id": "e2165963e6b1b86b9cea56cc8635b5e34708d093",
-      "tree_id": "39b39eb3d2b5837c4e2dd96118cc89bd78235719",
+      "id": "8695726d0a1dd60833ec9874abf5e59fd41d1538",
+      "tree_id": "8d9e7a5353212ce799a3e1a5762680cc15f4a286",
       "distinct": true,
-      "message": "update , add ececa and listr",
-      "timestamp": "2017-11-13T00:32:05+01:00",
-      "url": "https://github.com/frittata-cc/npm-test-up-ci/commit/e2165963e6b1b86b9cea56cc8635b5e34708d093",
+      "message": "kinda fix recursive test",
+      "timestamp": "2017-11-13T00:43:42+01:00",
+      "url": "https://github.com/frittata-cc/npm-test-up-ci/commit/8695726d0a1dd60833ec9874abf5e59fd41d1538",
       "author": {
         "name": "Christian Fei",
         "email": "crifei93@gmail.com",
@@ -33,45 +33,17 @@
       ],
       "modified": [
         "main.js",
-        "package-lock.json",
-        "package.json"
-      ]
-    },
-    {
-      "id": "8153ca17ecb66207af43a6037d354825e11d0b41",
-      "tree_id": "ad4b97fcbd751219501b2ba1d04a0615e64b411f",
-      "distinct": true,
-      "message": "use listr",
-      "timestamp": "2017-11-13T00:38:56+01:00",
-      "url": "https://github.com/frittata-cc/npm-test-up-ci/commit/8153ca17ecb66207af43a6037d354825e11d0b41",
-      "author": {
-        "name": "Christian Fei",
-        "email": "crifei93@gmail.com",
-        "username": "christian-fei"
-      },
-      "committer": {
-        "name": "Christian Fei",
-        "email": "crifei93@gmail.com",
-        "username": "christian-fei"
-      },
-      "added": [
-
-      ],
-      "removed": [
-
-      ],
-      "modified": [
-        "main.js"
+        "test/fixtures/webhook-payload.json"
       ]
     }
   ],
   "head_commit": {
-    "id": "8153ca17ecb66207af43a6037d354825e11d0b41",
-    "tree_id": "ad4b97fcbd751219501b2ba1d04a0615e64b411f",
+    "id": "8695726d0a1dd60833ec9874abf5e59fd41d1538",
+    "tree_id": "8d9e7a5353212ce799a3e1a5762680cc15f4a286",
     "distinct": true,
-    "message": "use listr",
-    "timestamp": "2017-11-13T00:38:56+01:00",
-    "url": "https://github.com/frittata-cc/npm-test-up-ci/commit/8153ca17ecb66207af43a6037d354825e11d0b41",
+    "message": "kinda fix recursive test",
+    "timestamp": "2017-11-13T00:43:42+01:00",
+    "url": "https://github.com/frittata-cc/npm-test-up-ci/commit/8695726d0a1dd60833ec9874abf5e59fd41d1538",
     "author": {
       "name": "Christian Fei",
       "email": "crifei93@gmail.com",
@@ -89,7 +61,8 @@
 
     ],
     "modified": [
-      "main.js"
+      "main.js",
+      "test/fixtures/webhook-payload.json"
     ]
   },
   "repository": {
@@ -160,13 +133,13 @@
     "deployments_url": "https://api.github.com/repos/frittata-cc/npm-test-up-ci/deployments",
     "created_at": 1510270128,
     "updated_at": "2017-11-12T21:09:24Z",
-    "pushed_at": 1510529940,
+    "pushed_at": 1510530235,
     "git_url": "git://github.com/frittata-cc/npm-test-up-ci.git",
     "ssh_url": "git@github.com:frittata-cc/npm-test-up-ci.git",
     "clone_url": "https://github.com/frittata-cc/npm-test-up-ci.git",
     "svn_url": "https://github.com/frittata-cc/npm-test-up-ci",
     "homepage": null,
-    "size": 40,
+    "size": 117,
     "stargazers_count": 0,
     "watchers_count": 0,
     "language": "JavaScript",
