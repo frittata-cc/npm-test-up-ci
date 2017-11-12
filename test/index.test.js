@@ -4,12 +4,11 @@ const request = require('r2')
 const {readFileSync} = require('fs')
 const exec = require('child_process').exec
 const {join} = require('path')
-const getPort = require('get-port')
+const findPort = require('find-port-sync')
 
-let PORT
+const PORT = findPort()
 let server
 test.before(async () => {
-  PORT = await getPort({port: 3001})
   server = await app.listen(PORT)
 })
 
