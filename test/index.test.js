@@ -13,7 +13,7 @@ test.before(async () => {
 })
 
 test.after(async () => {
-  const gitDir = join(__dirname, '..', 'test', 'fixtures', 'git')
+  const gitDir = join(__dirname, '..', 'build')
   exec('rm -r ' + gitDir, Function.prototype)
   await server.close()
 })
