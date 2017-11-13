@@ -6,6 +6,8 @@ const gitCheckout = require('./git/checkout')
 const npmInstall = require('./npm/install')
 const npmTest = require('./npm/test')
 
+const upDeploy = require('./up/deploy')
+
 module.exports = (url, commit) => new Listr([
   {
     title: 'git',
@@ -22,6 +24,14 @@ module.exports = (url, commit) => new Listr([
       return new Listr([
         npmInstall(process.env.NPM_TEST_UP_CI_GIT_DIR),
         npmTest(process.env.NPM_TEST_UP_CI_GIT_DIR)
+      ], {concurrent: false})
+    }
+  },
+  {
+    title: 'up',
+    task: () => {
+      return new Listr([
+        upDeploy(process.env.NPM_TEST_UP_CI_GIT_DIR)
       ], {concurrent: false})
     }
   }

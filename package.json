@@ -4,7 +4,7 @@
   "description": "deploy any up project with tests, triggered by webhooks",
   "main": "app.js",
   "scripts": {
-    "test": "ava"
+    "test": "NODE_ENV=test ava"
   },
   "repository": {
     "type": "git",
