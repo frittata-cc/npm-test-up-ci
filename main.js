@@ -6,6 +6,9 @@ const bodyParser = require('body-parser')
 const app = express()
 app.use(bodyParser.json())
 
+const gitClone = require('./tasks/git/clone')
+const gitCheckout = require('./tasks/git/checkout')
+
 app.post('/', function (req, res) {
   const {
     head_commit: {
@@ -25,14 +28,8 @@ app.post('/', function (req, res) {
       title: 'git',
       task: () => {
         return new Listr([
-          {
-            title: 'Cloning repo',
-            task: () => execa.stdout('git', ['clone', url, process.env.NPM_TEST_UP_CI_GIT_DIR]).then(result => {})
-          },
-          {
-            title: 'Checking out commit',
-            task: () => execa.stdout('git', ['reset', '--hard', commit], {cwd: process.env.NPM_TEST_UP_CI_GIT_DIR}).then(result => {})
-          }
+          gitClone(url, process.env.NPM_TEST_UP_CI_GIT_DIR),
+          gitCheckout(commit, process.env.NPM_TEST_UP_CI_GIT_DIR)
         ], {concurrent: false})
       }
     },
