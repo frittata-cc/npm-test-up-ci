@@ -8,11 +8,11 @@ const findPort = require('find-port-sync')
 
 const PORT = findPort()
 let server
-test.before(async () => {
+test.before(async function () {
   server = await app.listen(PORT)
 })
 
-test.after(async () => {
+test.after(async function () {
   const gitDir = join(__dirname, '..', 'build')
   exec('rm -r ' + gitDir, Function.prototype)
   await server.close()
