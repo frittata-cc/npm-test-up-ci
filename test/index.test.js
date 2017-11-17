@@ -19,7 +19,8 @@ test.after(async function () {
 })
 
 test.serial('clones repo', async t => {
-  const json = readFileSync(join(__dirname, 'fixtures', 'webhook-payload.json'), 'utf8')
-  const response = await request.post(`http://0.0.0.0:${PORT}`, { json: JSON.parse(json) }).json
+  const payload = readFileSync(join(__dirname, 'fixtures', 'webhook-payload.json'), 'utf8')
+  const json = JSON.parse(payload)
+  const response = await request.post(`http://0.0.0.0:${PORT}`, { json }).json
   t.truthy(response)
 })
